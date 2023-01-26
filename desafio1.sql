@@ -57,3 +57,11 @@ CREATE TABLE
         FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id),
         FOREIGN KEY (artista_id) REFERENCES artista (artista_id)
     ) engine = InnoDB;
+
+INSERT INTO
+    SpotifyClone.plano (nome, valor)
+VALUES ('gratuito', '0.00'), ('universitário', '5.99'), ('pessoal', '6.99'), ('familiar', '7.99');
+
+INSERT INTO
+    SpotifyClone.artista (nome)
+VALUES ('Beyoncé'), ('Queen'), ('Elis Regina'), ('Baco Exu do Blues'), ('Blind Guardian'), ('Nina Simone')
