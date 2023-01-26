@@ -47,7 +47,7 @@ CREATE TABLE
     SpotifyClone.historico(
         usuario_id INT NOT NULL,
         cancao_id INT NOT NULL,
-        data_reproducao DATE,
+        data_reproducao timestamp,
         CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
         FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id),
         FOREIGN KEY (cancao_id) REFERENCES cancao (cancao_id)
@@ -152,3 +152,15 @@ VALUES (
         3,
         '2017-02-17'
     );
+
+INSERT INTO
+    SpotifyClone.historico (
+        usuario_id,
+        cancao_id,
+        data_reproducao
+    )
+VALUES (1, 8, '2022-02-28 10:45:55'), (1, 2, '2020-05-02 05:30:35'), (1, 10, '2020-05-02 05:30:35'), (2, 10, '2022-08-05 08:05:17'), (2, 7, '2020-01-02 07:40:33'), (3, 10, '2020-11-13 16:55:13'), (3, 2, '2020-12-05 18:38:30'), (4, 8, '2021-08-15 17:10:10'), (5, 8, '2022-01-09 01:44:33'), (5, 5, '2020-08-06 15:23:43'), (6, 7, '2017-01-24 00:31:17'), (6, 1, '2017-10-12 12:35:20'), (7, 4, '2011-12-15 22:30:49'), (8, 4, '2012-03-17 14:56:41'), (9, 9, '2022-02-24 21:14:22'), (10, 3, '2015-12-13 08:30:22');
+
+INSERT INTO
+    SpotifyClone.seguindo (usuario_id, artista_id)
+VALUES (1, 1), (1, 2), (1, 3), (2, 1), (2, 3), (3, 2), (4, 4), (5, 5), (5, 6), (7, 6), (9, 3), (6, 6), (6, 1), (10, 2);
